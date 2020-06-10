@@ -1,0 +1,5 @@
+﻿  Meeting.cpp
+d:\users\tarkan\myprojects\personalcalender\personalcalender\meeting.cpp(3): error C2512: 'Date': no appropriate default constructor available
+  d:\users\tarkan\myprojects\personalcalender\personalcalender\date.h(8): note: see declaration of 'Date'
+d:\users\tarkan\myprojects\personalcalender\personalcalender\meeting.cpp(13): error C3867: 'Date::showDate': non-standard syntax; use '&' to create a pointer to member
+d:\users\tarkan\myprojects\personalcalender\personalcalender\meeting.cpp(14): error C3867: 'Date::showDate': non-standard syntax; use '&' to create a pointer to member
