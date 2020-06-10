@@ -10,6 +10,10 @@ public:
 
 	void showMeeting();
 
+	Date getStartDate();
+
+	Date getEndDate();
+
 private:
 	
 	string name;

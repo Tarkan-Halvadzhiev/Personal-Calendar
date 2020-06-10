@@ -7,7 +7,9 @@ public:
 
 	Calendar();
 
-	void addMeeting(Meeting& meeting);
+	vector<Meeting> getMeeting();
+
+	void bookMeeting(Meeting& meeting);
 
 private:
 	vector<Meeting> meetings;

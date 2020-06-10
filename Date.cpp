@@ -26,6 +26,26 @@ Date& Date::operator=(const Date& date) {
 	return *this;
 }
 
+int Date::getHour() {
+	return this->hour;
+}
+
+int Date::getDay() {
+	return this->day;
+}
+
+int Date::getYear() {
+	return this->year;
+}
+
+int Date::getMinutes() {
+	return this->minutes;
+}
+
+int Date::getMonth() {
+	return this->month;
+}
+
 void Date::setHour(int h) {
 	if (h < 0 && h > 24)
 		exit(0);

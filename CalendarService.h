@@ -1,14 +1,16 @@
 #pragma once
-#include <vector>
+#include "Calendar.h"
 
-using namespace std;
+//using namespace std;
 
 class CalendarService
 {
 public:
 	CalendarService();
 	
-	void book();
+	void book(string, string, int, int,int, int, int, int, int, int, int, int);
+
+	 bool checkIsAlreadyBusy(Meeting meeting);
 
 	void unbook();
 
@@ -29,5 +31,5 @@ public:
 	void merge();
 
 private:
-
+	Calendar calendar;
 };
