@@ -92,7 +92,35 @@ void CalendarService::agenda(int startDay, int startmonth, int startYear) {
 	}
 }
 
-void CalendarService::change() {
+void CalendarService::change(string note, string name, int startDay, int startmonth,
+	int startYear, int startMinute, int startHour, int endDay, int endmonth,
+	int endYear, int endMinute, int endHour) {
+	if (startmonth == endmonth && startDay == endDay &&
+		startYear == endYear && (startHour > endHour &&
+			startMinute == endMinute || startHour == endHour &&
+			startMinute > endMinute)) {
+
+		for (unsigned i = 0; i < calendar.getMeeting().size(); i++) {
+			Meeting crrMeeting = calendar.getMeeting()[i];
+			bool isForThisDay = startmonth == crrMeeting.getStartDate().getMonth() &&
+				startDay == crrMeeting.getStartDate().getDay() &&
+				startYear == crrMeeting.getStartDate().getYear() &&
+				startHour == crrMeeting.getStartDate().getHour() &&
+				startMinute == crrMeeting.getEndDate().getMinutes();
+
+			Date startDate = Date(startmonth, startDay, startYear, startHour, startMinute);
+			Date endDate = Date(endmonth, endDay, endYear, endHour, endMinute);
+			Meeting meeting = Meeting(name, note, startDate, endDate);
+			if (checkIsAlreadyBusy(meeting))
+			{
+				crrMeeting = meeting;
+			}
+		}
+	}
+	else
+	{
+		cout << "Invalid input." << endl;
+	}
 
 }
 

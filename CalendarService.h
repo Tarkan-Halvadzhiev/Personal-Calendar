@@ -16,7 +16,7 @@ public:
 
 	void agenda(int, int, int);
 
-	void change();
+	void change(string, string, int, int, int, int, int, int, int, int, int, int);
 
 	void find(string);
 
