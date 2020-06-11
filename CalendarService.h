@@ -18,7 +18,7 @@ public:
 
 	void change();
 
-	void find();
+	void find(string);
 
 	void holiday();
 

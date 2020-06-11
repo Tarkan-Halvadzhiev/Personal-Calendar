@@ -96,8 +96,18 @@ void CalendarService::change() {
 
 }
 
-void CalendarService:: find() {
+void CalendarService:: find(string word) {
 
+	for (unsigned i = 0; i < calendar.getMeeting().size(); i++) {
+		Meeting crrMeeting = calendar.getMeeting()[i];
+		bool isForThisDay = crrMeeting.getName().find(word) != -1 || 
+			crrMeeting.getDescription().find(word) != -1;
+
+
+		if (isForThisDay) {
+			crrMeeting.showMeeting();
+		}
+	}
 }
 
 void CalendarService::holiday() {

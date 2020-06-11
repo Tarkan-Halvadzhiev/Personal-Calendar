@@ -15,6 +15,14 @@ Date Meeting::getEndDate() {
 	return this->endTime;
 }
 
+string  Meeting::getName() {
+	return this->name;
+}
+
+string  Meeting::getDescription() {
+	return this->description;
+}
+
 void Meeting::showMeeting() {
 	cout << name << endl << description << endl;
 	startTime.showDate();

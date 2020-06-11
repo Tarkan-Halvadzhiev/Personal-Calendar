@@ -14,6 +14,10 @@ public:
 
 	Date getEndDate();
 
+	string getName();
+
+	string getDescription();
+
 private:
 	
 	string name;
