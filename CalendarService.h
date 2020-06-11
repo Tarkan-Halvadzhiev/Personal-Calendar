@@ -10,9 +10,9 @@ public:
 	
 	void book(string, string, int, int,int, int, int, int, int, int, int, int);
 
-	 bool checkIsAlreadyBusy(Meeting meeting);
+	bool checkIsAlreadyBusy(Meeting);
 
-	void unbook();
+	void unbook(int , int ,int , int , int );
 
 	void agenda();
 

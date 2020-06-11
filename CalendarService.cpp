@@ -55,7 +55,24 @@ bool CalendarService::checkIsAlreadyBusy(Meeting meeting) {
 	return true;
 }
 
-void CalendarService:: unbook() {
+void CalendarService:: unbook(int startDay, int startmonth,
+	int startYear, int startMinute, int startHour) {
+
+	for (unsigned i = 0; i < calendar.getMeeting().size(); i++) {
+		Meeting crrMeeting = calendar.getMeeting()[i];
+		bool isForThisDay = startmonth == crrMeeting.getStartDate().getMonth() &&
+			startDay == crrMeeting.getStartDate().getDay() &&
+			startYear == crrMeeting.getStartDate().getYear() &&
+			startHour == crrMeeting.getStartDate().getHour() &&
+			startMinute == crrMeeting.getEndDate().getMinutes();
+
+
+		if (isForThisDay) {
+			this->calendar.getMeeting()
+				.erase(this->calendar.getMeeting().begin() + i - 1);
+			return;
+		}
+	}
 
 }
 
