@@ -12,9 +12,9 @@ public:
 
 	bool checkIsAlreadyBusy(Meeting);
 
-	void unbook(int , int ,int , int , int );
+	void unbook(int , int ,int , int , int);
 
-	void agenda();
+	void agenda(int, int, int);
 
 	void change();
 
@@ -22,7 +22,7 @@ public:
 
 	void holiday();
 
-	void busydays();
+	void busydays(int, int, int, int, int, int, int, int, int, int);
 
 	void findSlot();
 

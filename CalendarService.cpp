@@ -74,10 +74,22 @@ void CalendarService:: unbook(int startDay, int startmonth,
 		}
 	}
 
+	cout << "Invalid input." << endl;
 }
 
-void CalendarService::agenda() {
+void CalendarService::agenda(int startDay, int startmonth, int startYear) {
 
+	for (unsigned i = 0; i < calendar.getMeeting().size(); i++) {
+		Meeting crrMeeting = calendar.getMeeting()[i];
+		bool isForThisDay = startmonth == crrMeeting.getStartDate().getMonth() &&
+			startDay == crrMeeting.getStartDate().getDay() &&
+			startYear == crrMeeting.getStartDate().getYear();
+
+
+		if (isForThisDay) {
+			crrMeeting.showMeeting();
+		}
+	}
 }
 
 void CalendarService::change() {
@@ -92,7 +104,28 @@ void CalendarService::holiday() {
 
 }
 
-void CalendarService:: busydays() {
+void CalendarService:: busydays(int startDay, int startmonth,
+	int startYear, int startMinute, int startHour, int endDay, int endmonth,
+	int endYear, int endMinute, int endHour) {
+
+	for (unsigned i = 0; i < calendar.getMeeting().size(); i++) {
+		Meeting crrMeeting = calendar.getMeeting()[i];
+		bool isForThisDay = startmonth <= crrMeeting.getStartDate().getMonth() &&
+			startDay == crrMeeting.getStartDate().getDay() &&
+			startYear == crrMeeting.getStartDate().getYear() &&
+			startHour == crrMeeting.getStartDate().getHour() &&
+			startMinute == crrMeeting.getStartDate().getMinutes() &&
+			endmonth >= crrMeeting.getEndDate().getMonth() &&
+			endDay == crrMeeting.getEndDate().getDay() &&
+			endYear == crrMeeting.getEndDate().getYear() &&
+			endHour == crrMeeting.getEndDate().getHour() &&
+			endMinute == crrMeeting.getEndDate().getMinutes();
+
+
+		if (isForThisDay) {
+			crrMeeting.showMeeting();
+		}
+	}
 
 }
 
